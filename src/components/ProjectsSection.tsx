@@ -35,7 +35,7 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center px-6 py-20 ml-24">
+    <section id="projects" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl w-full space-y-12">
         <h2 className="text-4xl md:text-5xl font-bold text-center gradient-text mb-12">
           Featured Projects

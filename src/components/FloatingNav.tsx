@@ -39,12 +39,12 @@ export const FloatingNav = () => {
   };
 
   return (
-    <nav className="fixed left-0 top-1/2 -translate-y-1/2 z-50 flex items-center">
+    <nav className="fixed left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 flex items-center pointer-events-none">
       {/* Vertical line */}
-      <div className="w-0.5 h-80 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+      <div className="hidden md:block w-0.5 h-80 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
       
       {/* Navigation buttons */}
-      <div className="flex flex-col gap-6 ml-4">
+      <div className="flex flex-col gap-4 md:gap-6 md:ml-4 pointer-events-auto">
         {navItems.map((item) => {
           const isActive = activeSection === item.href.substring(1);
           return (
@@ -55,18 +55,19 @@ export const FloatingNav = () => {
                 isActive ? "opacity-100" : "opacity-40 hover:opacity-70"
               }`}
               aria-label={item.label}
+              title={item.label}
             >
               <div
-                className={`p-2 rounded-lg border transition-all duration-300 ${
+                className={`p-2.5 md:p-2 rounded-full md:rounded-lg border transition-all duration-300 backdrop-blur-sm ${
                   isActive
-                    ? "bg-primary/10 border-primary minimal-glow"
-                    : "bg-card/40 border-border hover:border-primary/50"
+                    ? "bg-primary/20 border-primary minimal-glow"
+                    : "bg-card/80 border-border hover:border-primary/50"
                 }`}
               >
-                <item.icon className={`w-5 h-5 ${isActive ? "text-primary" : "text-muted-foreground"}`} />
+                <item.icon className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? "text-primary" : "text-muted-foreground"}`} />
               </div>
               <span
-                className={`text-sm font-medium whitespace-nowrap transition-all duration-300 ${
+                className={`hidden md:block text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                   isActive ? "opacity-100 translate-x-0 text-foreground" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 text-muted-foreground"
                 }`}
               >

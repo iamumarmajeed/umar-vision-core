@@ -20,7 +20,7 @@ const socialLinks = [
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20 ml-24">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-5xl w-full space-y-12 fade-in-up">
         {/* Profile Image and Name */}
         <div className="text-center space-y-8">

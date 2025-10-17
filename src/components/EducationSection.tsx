@@ -29,7 +29,7 @@ const education = [
 
 export const EducationSection = () => {
   return (
-    <section id="education" className="min-h-screen flex items-center justify-center px-6 py-20 ml-24">
+    <section id="education" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-4xl w-full space-y-8">
         <h2 className="text-4xl md:text-5xl font-bold text-center gradient-text mb-12">
           Education
