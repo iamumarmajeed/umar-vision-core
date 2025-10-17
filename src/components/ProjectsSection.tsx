@@ -35,7 +35,7 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center px-6 py-20">
+    <section id="projects" className="min-h-screen flex items-center justify-center px-6 py-20 ml-24">
       <div className="max-w-6xl w-full space-y-12">
         <h2 className="text-4xl md:text-5xl font-bold text-center gradient-text mb-12">
           Featured Projects
@@ -45,23 +45,23 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="glass p-6 rounded-2xl glow-hover-cyan group cursor-pointer fade-in-up"
+              className="glass p-6 rounded-lg hover-lift group cursor-pointer fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="p-3 rounded-lg bg-primary/10 glow-cyan group-hover:scale-110 transition-transform">
+                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all">
                   <project.icon className="w-6 h-6 text-primary" />
                 </div>
-                <span className="px-3 py-1 text-xs rounded-full glass border border-primary/30 text-primary">
+                <span className="px-3 py-1 text-xs rounded-full bg-card border border-border text-muted-foreground">
                   {project.badge}
                 </span>
               </div>
               
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm">
                 {project.description}
               </p>
             </div>

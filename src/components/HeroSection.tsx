@@ -20,16 +20,32 @@ const socialLinks = [
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="max-w-6xl w-full space-y-12 fade-in-up">
-        {/* Hero Text */}
-        <div className="text-center space-y-6">
-          <h1 className="text-5xl md:text-7xl font-bold gradient-text animate-pulse-glow">
-            Umar Majeed
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            AI/ML Software Engineer | Stanford University Section Leader
-          </p>
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20 ml-24">
+      <div className="max-w-5xl w-full space-y-12 fade-in-up">
+        {/* Profile Image and Name */}
+        <div className="text-center space-y-8">
+          {/* Circular profile image with soft glow */}
+          <div className="flex justify-center mb-8">
+            <div className="relative">
+              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 p-1 minimal-glow">
+                <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
+                  {/* Placeholder - replace with actual image */}
+                  <div className="w-full h-full bg-gradient-to-br from-muted to-card flex items-center justify-center">
+                    <span className="text-6xl font-bold text-primary">UM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
+              Umar Majeed
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
+              AI/ML Software Engineer | Stanford University Section Leader
+            </p>
+          </div>
         </div>
 
         {/* Stats Grid */}
@@ -37,7 +53,7 @@ export const HeroSection = () => {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="glass p-6 rounded-2xl text-center glow-hover-cyan"
+              className="glass p-6 rounded-lg text-center hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
@@ -49,7 +65,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3">
           {socialLinks.map((link, index) => (
             <a
               key={link.label}
@@ -61,9 +77,9 @@ export const HeroSection = () => {
             >
               <Button
                 variant="outline"
-                className="glass border-primary/30 hover:bg-primary/10 glow-hover-cyan group"
+                className="border-border hover:border-primary hover:bg-primary/5 transition-all"
               >
-                <link.icon className="w-4 h-4 mr-2 text-primary group-hover:scale-110 transition-transform" />
+                <link.icon className="w-4 h-4 mr-2" />
                 {link.label}
               </Button>
             </a>
