@@ -57,13 +57,18 @@ export const EducationSection = () => {
         
         <div className="space-y-8">
           {education.map((edu, index) => (
-            <div
-              key={edu.degree}
-              className="glass p-6 md:p-8 rounded-lg hover-lift fade-in-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <GraduationCap className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+          <div
+            key={edu.degree}
+            className="glass p-6 md:p-8 rounded-lg hover-lift fade-in-up border-2 border-border hover:border-primary/40 transition-all group relative overflow-hidden"
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse-glow" />
+            </div>
+              <div className="flex items-start gap-4 mb-4 relative z-10">
+                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:animate-glow-border transition-all">
+                  <GraduationCap className="w-8 h-8 text-primary flex-shrink-0 mt-1 group-hover:animate-rotate-slow" />
+                </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     {edu.degree}
@@ -72,18 +77,18 @@ export const EducationSection = () => {
                 </div>
               </div>
               
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                <span className="px-3 py-1 bg-card border border-border rounded-full">{edu.gpa}</span>
-                <span className="px-3 py-1 bg-card border border-border rounded-full">{edu.period}</span>
+              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4 relative z-10">
+                <span className="px-3 py-1 bg-card border border-border rounded-full hover:border-primary/40 transition-colors">{edu.gpa}</span>
+                <span className="px-3 py-1 bg-card border border-border rounded-full hover:border-primary/40 transition-colors">{edu.period}</span>
               </div>
               
-              <p className="text-foreground/90 leading-relaxed mb-4">
+              <p className="text-foreground/90 leading-relaxed mb-4 relative z-10">
                 {edu.details}
               </p>
 
               {/* Relevant Courses */}
               {edu.courses && (
-                <div className="mt-4 pt-4 border-t border-border">
+                <div className="mt-4 pt-4 border-t border-border relative z-10">
                   <h4 className="text-sm font-semibold text-primary mb-3">Relevant Courses</h4>
                   <div className="flex flex-wrap gap-2">
                     {edu.courses.map((course, idx) => (
@@ -100,9 +105,11 @@ export const EducationSection = () => {
 
               {/* Research section for MS degree */}
               {edu.research && (
-                <div className="mt-6 pt-6 border-t border-border">
+                <div className="mt-6 pt-6 border-t border-border relative z-10">
                   <div className="flex items-center gap-2 mb-4">
-                    <BookOpen className="w-5 h-5 text-primary" />
+                    <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 group-hover:animate-glow-border transition-all">
+                      <BookOpen className="w-5 h-5 text-primary group-hover:animate-float" />
+                    </div>
                     <h4 className="text-xl font-semibold text-foreground">Research</h4>
                   </div>
                   <div className="space-y-4">

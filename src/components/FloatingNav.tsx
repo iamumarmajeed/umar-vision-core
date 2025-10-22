@@ -61,11 +61,11 @@ export const FloatingNav = () => {
               <div
                 className={`p-2.5 md:p-2 rounded-full md:rounded-lg border transition-all duration-300 backdrop-blur-sm ${
                   isActive
-                    ? "bg-primary/20 border-primary minimal-glow"
+                    ? "bg-primary/20 border-primary minimal-glow animate-glow-border"
                     : "bg-card/80 border-border hover:border-primary/50"
                 }`}
               >
-                <item.icon className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? "text-primary" : "text-muted-foreground"}`} />
+                <item.icon className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? "text-primary animate-pulse" : "text-muted-foreground group-hover:animate-rotate-slow"}`} />
               </div>
               <span
                 className={`hidden md:block text-sm font-medium whitespace-nowrap transition-all duration-300 ${

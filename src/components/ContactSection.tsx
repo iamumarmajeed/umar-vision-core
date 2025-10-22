@@ -39,14 +39,17 @@ export const ContactSection = () => {
               className="block fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="glass p-6 rounded-lg text-center hover-lift group h-full">
-                <div className="inline-flex p-4 rounded-lg bg-primary/10 border border-primary/20 mb-4 group-hover:border-primary/40 transition-all">
-                  <contact.icon className="w-8 h-8 text-primary" />
+              <div className="glass p-6 rounded-lg text-center hover-lift group h-full border-2 border-border hover:border-primary/40 transition-all relative overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse-glow" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <div className="inline-flex p-4 rounded-lg bg-primary/10 border border-primary/20 mb-4 group-hover:border-primary/40 transition-all group-hover:animate-glow-border relative z-10">
+                  <contact.icon className="w-8 h-8 text-primary group-hover:animate-rotate-slow" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2 relative z-10">
                   {contact.label}
                 </h3>
-                <p className="text-sm text-muted-foreground break-words">
+                <p className="text-sm text-muted-foreground break-words relative z-10">
                   {contact.value}
                 </p>
               </div>

@@ -88,31 +88,34 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="glass p-6 rounded-lg hover-lift group cursor-pointer fade-in-up border border-border"
+              className="glass p-6 rounded-lg hover-lift group cursor-pointer fade-in-up border-2 border-border hover:border-primary/40 transition-all relative overflow-hidden"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
-                boxShadow: '0 4px 20px rgba(0, 170, 255, 0.15)'
+                boxShadow: '0 0 20px rgba(0, 170, 255, 0.1)'
               }}
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all minimal-glow">
-                  <project.icon className="w-6 h-6 text-primary" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse-glow" />
+              </div>
+              <div className="flex items-start justify-between mb-4 relative z-10">
+                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all minimal-glow group-hover:animate-glow-border">
+                  <project.icon className="w-6 h-6 text-primary group-hover:animate-rotate-slow" />
                 </div>
                 <span className="px-3 py-1 text-xs rounded-full bg-card border border-border text-muted-foreground">
                   {project.badge}
                 </span>
               </div>
               
-              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors relative z-10">
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+              <p className="text-muted-foreground leading-relaxed text-sm mb-4 relative z-10">
                 {project.description}
               </p>
 
               {/* Project Links */}
-              <div className="flex gap-2 mt-4 pt-4 border-t border-border">
+              <div className="flex gap-2 mt-4 pt-4 border-t border-border relative z-10">
                 <a
                   href={project.github}
                   target="_blank"
@@ -122,9 +125,9 @@ export const ProjectsSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="w-full border-border hover:border-primary/50 hover:bg-primary/5 transition-all"
+                    className="w-full border-border hover:border-primary/50 hover:bg-primary/5 transition-all hover:animate-glow-border"
                   >
-                    <Github className="w-4 h-4 mr-1" />
+                    <Github className="w-4 h-4 mr-1 group-hover:animate-rotate-slow" />
                     Code
                   </Button>
                 </a>
@@ -137,9 +140,9 @@ export const ProjectsSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="w-full border-border hover:border-primary/50 hover:bg-primary/5 transition-all"
+                    className="w-full border-border hover:border-primary/50 hover:bg-primary/5 transition-all hover:animate-glow-border"
                   >
-                    <ExternalLink className="w-4 h-4 mr-1" />
+                    <ExternalLink className="w-4 h-4 mr-1 group-hover:animate-rotate-slow" />
                     Live
                   </Button>
                 </a>

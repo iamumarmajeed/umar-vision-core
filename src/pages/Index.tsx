@@ -6,11 +6,13 @@ import { EducationSection } from "@/components/EducationSection";
 import { TechnicalSkillsSection } from "@/components/TechnicalSkillsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { AnimatedCharacter } from "@/components/AnimatedCharacter";
 
 const Index = () => {
   return (
     <div className="relative">
       <AnimatedBackground />
+      <AnimatedCharacter />
       <FloatingNav />
       
       <main className="relative z-10">

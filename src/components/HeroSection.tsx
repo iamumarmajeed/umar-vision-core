@@ -54,12 +54,15 @@ export const HeroSection = () => {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="glass p-6 rounded-lg text-center hover-lift group cursor-pointer border border-border hover:border-primary/40 transition-all"
+              className="glass p-6 rounded-lg text-center hover-lift group cursor-pointer border-2 border-border hover:border-primary/40 transition-all relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-pulse-glow" />
+              </div>
               <div className="flex justify-center mb-3">
-                <div className="p-3 rounded-full bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all">
-                  <stat.icon className="w-6 h-6 text-primary" />
+                <div className="p-3 rounded-full bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all group-hover:animate-glow-border">
+                  <stat.icon className="w-6 h-6 text-primary group-hover:animate-rotate-slow" />
                 </div>
               </div>
               <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
@@ -83,10 +86,10 @@ export const HeroSection = () => {
             >
               <Button
                 variant="outline"
-                className="relative border-border hover:border-primary transition-all overflow-hidden bg-card/60 backdrop-blur-sm"
+                className="relative border-2 border-border hover:border-primary transition-all overflow-hidden bg-card/60 backdrop-blur-sm hover:animate-glow-border"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <link.icon className="w-4 h-4 mr-2 relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-glow" />
+                <link.icon className="w-4 h-4 mr-2 relative z-10 group-hover:animate-rotate-slow" />
                 <span className="relative z-10">{link.label}</span>
               </Button>
             </a>

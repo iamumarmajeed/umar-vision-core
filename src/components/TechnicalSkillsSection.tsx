@@ -33,26 +33,29 @@ export const TechnicalSkillsSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skills.map((skill, index) => (
-            <div
-              key={skill.title}
-              className="glass p-6 md:p-8 rounded-lg hover-lift border border-border group cursor-pointer fade-in-up"
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                boxShadow: '0 0 20px rgba(0, 170, 255, 0.1)'
-              }}
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all">
-                  <skill.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors flex-1 pt-2">
-                  {skill.title}
-                </h3>
+          <div
+            key={skill.title}
+            className="glass p-6 md:p-8 rounded-lg hover-lift border-2 border-border hover:border-primary/40 transition-all group cursor-pointer fade-in-up relative overflow-hidden"
+            style={{ 
+              animationDelay: `${index * 0.1}s`,
+              boxShadow: '0 0 20px rgba(0, 170, 255, 0.1)'
+            }}
+          >
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse-glow" />
+            </div>
+            <div className="flex items-start gap-4 mb-4 relative z-10">
+              <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all group-hover:animate-glow-border">
+                <skill.icon className="w-7 h-7 text-primary group-hover:animate-rotate-slow" />
               </div>
-              
-              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                {skill.description}
-              </p>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors flex-1 pt-2">
+                {skill.title}
+              </h3>
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed text-sm md:text-base relative z-10">
+              {skill.description}
+            </p>
             </div>
           ))}
         </div>
