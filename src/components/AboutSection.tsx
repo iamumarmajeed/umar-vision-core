@@ -6,15 +6,15 @@ export const AboutSection = () => {
           About Me
         </h2>
         
-        <div className="glass p-8 md:p-12 rounded-lg hover-lift">
+        <div className="glass p-8 md:p-12 rounded-lg hover-lift border border-border">
+          <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-6">
+            I am an <span className="text-primary font-semibold">AI/ML Engineer and Researcher</span> (MS in AI, Dec 2025) specializing in <span className="text-primary">multi-agent systems</span> and <span className="text-primary">Meta-Reinforcement Learning</span>. My foundation as a <span className="text-primary">Codeforces Expert</span> and <span className="text-primary">Meta Hacker Cup Global Rank #45</span> drives my passion for solving complex algorithmic problems.
+          </p>
+          <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-6">
+            My core technical expertise is in <span className="text-primary">architecting and building scalable, high-availability distributed systems</span> for AI. I am proficient in <span className="text-primary">Python and C++</span> and have hands-on experience designing end-to-end systems using <span className="text-primary">microservices, load balancing (Redis), and message queues (Kafka)</span>. I deploy robust <span className="text-primary">MLOps pipelines</span> using <span className="text-primary">Kubernetes, Docker, and TensorFlow Serving</span> on <span className="text-primary">GCP and AWS</span>, with projects including a real-time recommendation engine handling 1M+ requests/min.
+          </p>
           <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
-            I am <span className="text-primary font-semibold">Umar Majeed</span>, an AI/ML Software Engineer 
-            passionate about <span className="text-primary">Reinforcement Learning</span>, <span className="text-primary">Computer Vision</span>, 
-            and <span className="text-primary">Autonomous Systems</span>. With over 3 years of experience, 
-            I've led 30+ AI projects and mentored 40+ international teams through global hackathons. 
-            My expertise spans Meta-Reinforcement Learning, Deep Learning, and AI automation systems. 
-            I thrive on building intelligent systems that solve complex real-world problems and pushing 
-            boundaries in autonomous AI research.
+            Beyond my technical skills in <span className="text-primary">GenAI (RAG)</span> and <span className="text-primary">MLOps</span>, I am a proven leader, mentoring for <span className="text-primary">Stanford's Code in Place</span> and <span className="text-primary">Harvard's CS50x</span>. I am actively seeking a high-impact software engineering role (targeting Google L4) or a fully-funded PhD position to continue my work at the frontier of scalable AI.
           </p>
         </div>
       </div>

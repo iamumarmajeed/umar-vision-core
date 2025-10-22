@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Download, BookOpen, Linkedin, Github, Code, Trophy, MessageSquare } from "lucide-react";
+import { Download, BookOpen, Linkedin, Github, Code, Trophy, MessageSquare, Briefcase, FolderGit, Brain, Award, GraduationCap } from "lucide-react";
 
 const stats = [
-  { value: "3+", label: "Years Experience" },
-  { value: "100+", label: "Projects Completed" },
-  { value: "20+", label: "AI Models Deployed" },
-  { value: "700+", label: "LeetCode Problems" },
+  { value: "3+", label: "Years Experience", icon: Briefcase },
+  { value: "100+", label: "Projects Completed", icon: FolderGit },
+  { value: "20+", label: "AI Models Deployed", icon: Brain },
+  { value: "700+", label: "LeetCode Problems", icon: Code },
+  { value: "700+", label: "Hours Teaching", icon: GraduationCap },
 ];
 
 const socialLinks = [
@@ -43,28 +44,33 @@ export const HeroSection = () => {
               Umar Majeed
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
-              AI/ML Software Engineer | Stanford University Section Leader
+              Software Engineer | Artificial Intelligence & Machine Learning | Stanford University Section Leader
             </p>
           </div>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {/* Stats Grid - Professional with icons */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-4">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="glass p-6 rounded-lg text-center hover-lift"
+              className="glass p-6 rounded-lg text-center hover-lift group cursor-pointer border border-border hover:border-primary/40 transition-all"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              <div className="flex justify-center mb-3">
+                <div className="p-3 rounded-full bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-all">
+                  <stat.icon className="w-6 h-6 text-primary" />
+                </div>
+              </div>
+              <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-xs md:text-sm text-muted-foreground leading-tight">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Social Links */}
+        {/* Social Links - Glowing buttons */}
         <div className="flex flex-wrap justify-center gap-3">
           {socialLinks.map((link, index) => (
             <a
@@ -72,15 +78,16 @@ export const HeroSection = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block"
+              className="inline-block group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Button
                 variant="outline"
-                className="border-border hover:border-primary hover:bg-primary/5 transition-all"
+                className="relative border-border hover:border-primary transition-all overflow-hidden bg-card/60 backdrop-blur-sm"
               >
-                <link.icon className="w-4 h-4 mr-2" />
-                {link.label}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <link.icon className="w-4 h-4 mr-2 relative z-10" />
+                <span className="relative z-10">{link.label}</span>
               </Button>
             </a>
           ))}

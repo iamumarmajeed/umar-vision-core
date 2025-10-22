@@ -1,17 +1,17 @@
 export const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Gradient background */}
+      {/* Dark crystal black background with green/red shades */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)'
+          background: 'radial-gradient(ellipse at top, #0a0f0a 0%, #000000 50%, #0d0505 100%)'
         }}
       />
       
-      {/* Animated particles/stars */}
+      {/* Animated particles/stars - more stars */}
       <div className="absolute inset-0">
-        {[...Array(50)].map((_, i) => (
+        {[...Array(150)].map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full bg-white animate-twinkle"
@@ -28,11 +28,11 @@ export const AnimatedBackground = () => {
         ))}
       </div>
 
-      {/* Subtle glow overlay */}
+      {/* Green and red glow overlays */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-10"
         style={{
-          background: 'radial-gradient(circle at 20% 50%, rgba(0, 170, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(0, 170, 255, 0.1) 0%, transparent 50%)'
+          background: 'radial-gradient(circle at 20% 30%, rgba(0, 255, 100, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 50, 50, 0.12) 0%, transparent 40%)'
         }}
       />
     </div>

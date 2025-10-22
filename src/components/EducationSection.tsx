@@ -7,6 +7,13 @@ const education = [
     gpa: "CGPA 3.4/4.0",
     period: "Expected Dec 2025",
     details: "Advanced studies in AI/ML with focus on multi-agent systems and reinforcement learning.",
+    courses: [
+      "Advanced Analysis of Algorithms",
+      "Deep Learning",
+      "Machine Learning",
+      "Deep Reinforcement Learning",
+      "Computer Vision: From Theory to Applications"
+    ],
     research: [
       {
         title: "Thesis",
@@ -24,6 +31,19 @@ const education = [
     gpa: "CGPA 3.3/4.0",
     period: "2022",
     details: "FYP: Smart Firearm Detection & Alert System — 92% accuracy in real-time firearm detection.",
+    courses: [
+      "Design & Analysis of Algorithms",
+      "Data Structures & Algorithms",
+      "Artificial Intelligence",
+      "Object Oriented Programming",
+      "Advance OOP",
+      "Operating Systems",
+      "Intro to Database Systems",
+      "Computer Networks",
+      "Data Mining",
+      "Discrete Structures",
+      "Introduction to Software Engineering"
+    ]
   },
 ];
 
@@ -60,6 +80,23 @@ export const EducationSection = () => {
               <p className="text-foreground/90 leading-relaxed mb-4">
                 {edu.details}
               </p>
+
+              {/* Relevant Courses */}
+              {edu.courses && (
+                <div className="mt-4 pt-4 border-t border-border">
+                  <h4 className="text-sm font-semibold text-primary mb-3">Relevant Courses</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {edu.courses.map((course, idx) => (
+                      <span 
+                        key={idx} 
+                        className="px-3 py-1 text-xs bg-card border border-border rounded-full text-muted-foreground hover:border-primary/40 transition-colors"
+                      >
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Research section for MS degree */}
               {edu.research && (
