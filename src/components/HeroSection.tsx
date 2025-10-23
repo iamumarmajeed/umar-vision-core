@@ -54,7 +54,7 @@ export const HeroSection = () => {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="glass p-6 rounded-lg text-center hover-lift group cursor-pointer border-2 border-border hover:border-primary/40 transition-all relative overflow-hidden"
+              className="glass p-6 rounded-lg text-center hover-lift card-3d group cursor-pointer border-2 border-border hover:border-primary/40 transition-all relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

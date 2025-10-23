@@ -35,7 +35,7 @@ export const TechnicalSkillsSection = () => {
           {skills.map((skill, index) => (
           <div
             key={skill.title}
-            className="glass p-6 md:p-8 rounded-lg hover-lift border-2 border-border hover:border-primary/40 transition-all group cursor-pointer fade-in-up relative overflow-hidden"
+            className="glass p-6 md:p-8 rounded-lg hover-lift card-3d border-2 border-border hover:border-primary/40 transition-all group cursor-pointer fade-in-up relative overflow-hidden"
             style={{ 
               animationDelay: `${index * 0.1}s`,
               boxShadow: '0 0 20px rgba(0, 170, 255, 0.1)'

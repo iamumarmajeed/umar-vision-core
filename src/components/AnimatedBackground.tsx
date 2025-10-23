@@ -35,6 +35,47 @@ export const AnimatedBackground = () => {
           background: 'radial-gradient(circle at 20% 30%, rgba(0, 255, 100, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 50, 50, 0.12) 0%, transparent 40%)'
         }}
       />
+
+      {/* Shooting/Breaking stars */}
+      <div className="absolute inset-0">
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={`shooting-${i}`}
+            className="absolute animate-shooting-star"
+            style={{
+              animationDelay: `${i * 4}s`,
+              animationDuration: '2s',
+            }}
+          >
+            <div className="relative">
+              {/* Star head */}
+              <div className="w-2 h-2 bg-white rounded-full shadow-[0_0_10px_2px_rgba(255,255,255,0.8)]" />
+              {/* Star trail */}
+              <div className="absolute top-1 -right-12 w-12 h-0.5 bg-gradient-to-r from-white to-transparent opacity-70" 
+                   style={{ transform: 'rotate(-45deg) translateY(-50%)' }} />
+            </div>
+          </div>
+        ))}
+        
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={`shooting-reverse-${i}`}
+            className="absolute animate-shooting-star-reverse"
+            style={{
+              animationDelay: `${i * 4 + 2}s`,
+              animationDuration: '2s',
+            }}
+          >
+            <div className="relative">
+              {/* Star head */}
+              <div className="w-2 h-2 bg-cyan-300 rounded-full shadow-[0_0_10px_2px_rgba(0,255,255,0.6)]" />
+              {/* Star trail */}
+              <div className="absolute top-1 -left-12 w-12 h-0.5 bg-gradient-to-l from-cyan-300 to-transparent opacity-70" 
+                   style={{ transform: 'rotate(45deg) translateY(-50%)' }} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

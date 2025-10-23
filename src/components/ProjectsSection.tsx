@@ -88,7 +88,7 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="glass p-6 rounded-lg hover-lift group cursor-pointer fade-in-up border-2 border-border hover:border-primary/40 transition-all relative overflow-hidden"
+              className="glass p-6 rounded-lg hover-lift card-3d group cursor-pointer fade-in-up border-2 border-border hover:border-primary/40 transition-all relative overflow-hidden"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 boxShadow: '0 0 20px rgba(0, 170, 255, 0.1)'

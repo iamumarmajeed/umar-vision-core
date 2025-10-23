@@ -105,46 +105,67 @@ export const AnimatedCharacter = () => {
         transform: `translate(-50%, -50%) ${isFlipped ? "scaleX(-1)" : ""}`,
       }}
     >
-      {/* Cute anime character */}
+      {/* Hayasaka anime character */}
       <div className="relative">
         {/* Shadow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-black/20 rounded-full blur-sm" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-black/30 rounded-full blur-sm" />
         
         {/* Character body */}
         <div className="relative animate-bounce-subtle">
-          {/* Head */}
-          <div className="w-16 h-16 bg-gradient-to-br from-pink-200 to-pink-300 rounded-full relative border-2 border-pink-400">
-            {/* Eyes */}
-            <div className="absolute top-6 left-3 w-3 h-4 bg-gray-800 rounded-full animate-pulse" />
-            <div className="absolute top-6 right-3 w-3 h-4 bg-gray-800 rounded-full animate-pulse" />
-            {/* Eye shine */}
-            <div className="absolute top-6 left-4 w-1 h-1 bg-white rounded-full" />
-            <div className="absolute top-6 right-4 w-1 h-1 bg-white rounded-full" />
-            {/* Blush */}
-            <div className="absolute top-9 left-1 w-2 h-2 bg-pink-400/60 rounded-full" />
-            <div className="absolute top-9 right-1 w-2 h-2 bg-pink-400/60 rounded-full" />
-            {/* Mouth */}
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 w-2 h-1 bg-pink-600/60 rounded-full" />
+          {/* Head with blonde hair */}
+          <div className="relative">
+            {/* Hair */}
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-20 h-16 bg-gradient-to-b from-yellow-200 to-yellow-300 rounded-t-full border-2 border-yellow-400" />
+            
+            {/* Face */}
+            <div className="relative w-14 h-14 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full border-2 border-pink-300 mx-auto mt-4">
+              {/* Side hair strands */}
+              <div className="absolute -left-3 top-2 w-4 h-12 bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-full border border-yellow-400 -rotate-12" />
+              <div className="absolute -right-3 top-2 w-4 h-12 bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-full border border-yellow-400 rotate-12" />
+              
+              {/* Eyes - signature Hayasaka look */}
+              <div className="absolute top-5 left-2 w-3 h-3 bg-blue-800 rounded-full">
+                <div className="absolute top-0 left-1 w-1 h-1 bg-white rounded-full" />
+              </div>
+              <div className="absolute top-5 right-2 w-3 h-3 bg-blue-800 rounded-full">
+                <div className="absolute top-0 left-1 w-1 h-1 bg-white rounded-full" />
+              </div>
+              
+              {/* Blush */}
+              <div className="absolute top-7 left-0 w-2 h-1.5 bg-pink-400/60 rounded-full" />
+              <div className="absolute top-7 right-0 w-2 h-1.5 bg-pink-400/60 rounded-full" />
+              
+              {/* Mouth - slight smile */}
+              <div className="absolute top-9 left-1/2 -translate-x-1/2 w-3 h-1 bg-red-400/60 rounded-full" />
+            </div>
           </div>
           
-          {/* Body */}
-          <div className="w-12 h-14 bg-gradient-to-br from-purple-300 to-purple-400 rounded-lg mx-auto -mt-2 border-2 border-purple-500" />
+          {/* Body - maid outfit inspired */}
+          <div className="relative w-14 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg mx-auto -mt-2 border-2 border-gray-700">
+            {/* White collar */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-2 bg-white rounded-t-full" />
+            {/* Apron detail */}
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-10 bg-white/20 rounded-lg border border-white/30" />
+          </div>
           
           {/* Arms */}
-          <div className="absolute top-16 -left-2 w-3 h-8 bg-pink-200 rounded-full border border-pink-300 animate-float" />
-          <div className="absolute top-16 -right-2 w-3 h-8 bg-pink-200 rounded-full border border-pink-300 animate-float" style={{ animationDelay: "0.5s" }} />
+          <div className="absolute top-18 -left-2 w-3 h-10 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full border border-pink-300 animate-float" />
+          <div className="absolute top-18 -right-2 w-3 h-10 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full border border-pink-300 animate-float" style={{ animationDelay: "0.5s" }} />
+          
+          {/* Skirt */}
+          <div className="w-16 h-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-b-lg mx-auto -mt-1 border-2 border-gray-700" />
           
           {/* Legs */}
-          <div className="flex justify-center gap-2 -mt-1">
-            <div className="w-3 h-6 bg-pink-200 rounded-full border border-pink-300" />
-            <div className="w-3 h-6 bg-pink-200 rounded-full border border-pink-300" />
+          <div className="flex justify-center gap-3 mt-1">
+            <div className="w-2.5 h-8 bg-gradient-to-b from-pink-100 to-pink-200 rounded-full border border-pink-300" />
+            <div className="w-2.5 h-8 bg-gradient-to-b from-pink-100 to-pink-200 rounded-full border border-pink-300" />
           </div>
         </div>
 
-        {/* Sparkles around character */}
-        <div className="absolute -top-2 -right-2 w-2 h-2 bg-yellow-300 rounded-full animate-pulse" />
-        <div className="absolute top-4 -left-3 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-pulse" style={{ animationDelay: "0.3s" }} />
-        <div className="absolute -bottom-2 right-2 w-1 h-1 bg-pink-300 rounded-full animate-pulse" style={{ animationDelay: "0.6s" }} />
+        {/* Sparkles around Hayasaka */}
+        <div className="absolute -top-4 -right-2 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+        <div className="absolute top-2 -left-4 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "0.3s" }} />
+        <div className="absolute bottom-4 right-3 w-1 h-1 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.6s" }} />
       </div>
     </div>
   );

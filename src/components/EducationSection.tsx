@@ -59,7 +59,7 @@ export const EducationSection = () => {
           {education.map((edu, index) => (
           <div
             key={edu.degree}
-            className="glass p-6 md:p-8 rounded-lg hover-lift fade-in-up border-2 border-border hover:border-primary/40 transition-all group relative overflow-hidden"
+            className="glass p-6 md:p-8 rounded-lg hover-lift card-3d fade-in-up border-2 border-border hover:border-primary/40 transition-all group relative overflow-hidden"
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
