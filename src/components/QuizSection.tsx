@@ -159,10 +159,6 @@ export const QuizSection = () => {
           </CardContent>
         </Card>
 
-        {/* Progress */}
-        <div className="mt-6 text-center text-sm text-muted-foreground">
-          Question {currentIndex + 1} of {questions.length}
-        </div>
       </div>
     </section>
   );
